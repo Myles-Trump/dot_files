@@ -9,22 +9,22 @@
 
 
 # update and upgrade system
-echo Update and upgrade system
+echo Updating and upgrading the system...
 sudo apt-get update -y
 sudo apt-get dist-upgrade -y
 
 # load some programs
-echo Load programs
+echo Loading programs...
 sudo apt install tree
 sudo apt install unzip
 sudo apt-get -y install python3-pip
 
 # load .vimrc file
-echo Load .vimrc file
+echo Loading .vimrc file...
 cp ./.vimrc ~/.vimrc
 
 # load .bashrc file
-echo Load .bashrc file
+echo Loading .bashrc file...
 > ~/.bashrc
 cp ./.bashrc ~/.bashrc
 
@@ -36,7 +36,7 @@ echo '    source $HOME/.bashrc' >> ~/.bash_profile
 echo 'fi' >> ~/.bash_profile
 
 # copy over shell script file
-echo Load shell script files
+echo Loading shell script files...
 mkdir ~/scripts
 cp ./repo.sh ~/scripts/repo.sh
 sudo chmod +x ~/scripts/repo.sh
@@ -48,38 +48,43 @@ cp ./main.yml ~/scripts/main.yml
 cp ./swift.yml ~/scripts/swift.yml
 
 # load YouCompleteMe
-echo Load YouCompleteMe plugin for Vim
+echo Loading YouCompleteMe plugin for Vim...
 # need to do an upgrade to python libraries first
 sudo pip3 install --upgrade requests
 sudo apt install vim-youcompleteme -y
 vim-addon-manager install youcompleteme
 
 # load java programming software
-echo load Java
+echo Loading Java...
 sudo apt install default-jdk -y
 
 # loading checkstyle for java
 # https://github.com/checkstyle/checkstyle/releases
-echo load CheckStyle for Java
+echo Loading CheckStyle for Java...
 wget https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.44/checkstyle-8.44-all.jar
+mkdir ~/scripts
 cp ./checkstyle-8.44-all.jar ~/scripts/checkstyle.jar
+wget https://raw.githubusercontent.com/Mr-Coxall/dot_files/main/mr-coxall_checks.xml
 cp ./mr-coxall_checks.xml ~/scripts/
 
 
 # you might need to get a newer version of swift
 # https://swift.org/download/
-echo load Swift
+echo Loading Swift...
 sudo apt-get install -y clang libblocksruntime0 libcurl4-openssl-dev -y
-wget https://swift.org/builds/swift-5.5-release/ubuntu2004/swift-5.5-RELEASE/swift-5.5-RELEASE-ubuntu20.04.tar.gz
-tar -zxvf swift-5.5-RELEASE-ubuntu20.04.tar.gz
+wget https://download.swift.org/swift-5.5.1-release/ubuntu2004/swift-5.5.1-RELEASE/swift-5.5.1-RELEASE-ubuntu20.04.tar.gz
+tar -zxvf swift-5.5.1-RELEASE-ubuntu20.04.tar.gz
 sudo mkdir /usr/bin/swift
-sudo cp -R ./swift-5.5-RELEASE-ubuntu20.04/usr/* /usr/bin/swift
+sudo cp -R ./swift-5.5.1-RELEASE-ubuntu20.04/usr/* /usr/bin/swift
 echo "" >> ~/.bashrc
 echo 'export PATH="${PATH}":/usr/bin/swift/bin' >> ~/.bashrc
+source ~/.bashrc
+sudo rm -R ./swift-5.5.1-RELEASE-ubuntu20.04
+sudo rm ./swift-5.5.1-RELEASE-ubuntu20.04.tar.gz
 
 # SwiftLint
 # https://github.com/realm/SwiftLint/releases to get latest release
-echo load SwiftLint for Swift
+echo Loading SwiftLint for Swift...
 wget https://github.com/realm/SwiftLint/releases/download/0.44.0/swiftlint_linux.zip
 unzip -n swiftlint_linux.zip
 sudo mkdir /usr/bin/swiftlint
@@ -105,7 +110,7 @@ sudo rm -R ~/dot_files
 
 # reboot
 echo ---
-echo rebooting now ...
+echo Rebooting now ...
 echo ---
 sudo reboot now
 
