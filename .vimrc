@@ -1,6 +1,6 @@
 " Created by: Myles Trump
 " Created on: Nov 2021
-" Baisc Vim configurations
+" Basic Vim configurations
 
 set nocompatible        " don't try to be vi compatible
 set number              " turn on line numbers
