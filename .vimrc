@@ -13,7 +13,6 @@ set colorcolumn=80      " set a line down on column 80
 set textwidth=79        " so you do not go over 80 character max
 set wrap                " wrap lines
 set scrolloff=5         " show 5 lines above and below cursor
-syntax on               " turn on syntax highlighting
 set expandtab           " convert tabs to spaces
 set shiftwidth=4        " tabs to 4 spaces
 set softtabstop=4       " tabs to 4 spaces
