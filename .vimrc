@@ -9,7 +9,6 @@ set encoding=utf-8      " set encoding to UTF-8 (default was "latin1")
 set showmatch           " highlight matching parentheses / brackets [{()}]
 set ruler               " show line and column number of the cursor on right side of statusline
 set noerrorbells        " turn off bell sound
-set visualbell          " blink cursor on error, instead of beeping!
 set colorcolumn=80      " set a line down on column 80
 set textwidth=79        " so you do not go over 80 character max
 set wrap                " wrap lines
