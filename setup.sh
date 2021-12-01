@@ -54,6 +54,19 @@ sudo pip3 install --upgrade requests
 sudo apt install vim-youcompleteme -y
 vim-addon-manager install youcompleteme
 
+# update Git
+echo Upgrading Git...
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install -y git
+
+# load GitHub CLI
+echo Loading GitHub CLI...
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt install gh
+
+
 # load java programming software
 echo Loading Java...
 sudo apt install default-jdk -y
