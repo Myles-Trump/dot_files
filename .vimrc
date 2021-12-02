@@ -18,3 +18,9 @@ set shiftwidth=4        " tabs to 4 spaces
 set softtabstop=4       " tabs to 4 spaces
 set spell               " basic spell checking, for comments
 colorscheme koehler     " set the color scheme
+" Auto close for brackets and stuff
+inoremap "  ""<ESC>hli
+inoremap '  ''<ESC>hli
+inoremap (  ()<ESC>hli
+inoremap [  []<ESC>hli
+inoremap {  {}<ESC>hli
